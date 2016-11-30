@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block Content %}
+
+
+    <div class="row row-card row-title">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="news-title">{{ article.title }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                <span class="fa fa-refresh">
+
+            </span>
+                    &nbsp;
+                <span class="views">
+                    {{ hitcount.total_hits }}
+            </span>
+                    &nbsp;{% trans "views" %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        {#   SIDEBAR#}
+        <div class="col-md-3 col-side">
+
+        </div>
+        <div class="col-md-9">
+            <!-- content -->
+
+        </div>
+    </div>
+
+
+    <div class="row row-card">
+        <div class="col-md-12">
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 row-margin-bottom">
+                    <img src="{{ article.image.url }}" class="img-responsive"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <span class='st_sharethis_large' displayText='ShareThis'></span>
+                    <span class='st_facebook_large' displayText='Facebook'></span>
+                    <span class='st_twitter_large' displayText='Tweet'></span>
+                    <span class='st_linkedin_large' displayText='LinkedIn'></span>
+                    <span class='st_pinterest_large' displayText='Pinterest'></span>
+                    <span class='st_email_large' displayText='Email'></span>
+                    {{ article.content|safe }}
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+{% endblock %}
